@@ -1,5 +1,19 @@
-// Aguarda 7 segundos (quase no final da animação do sol) e exibe o nome da empresa
-setTimeout(() => {
-  const name = document.getElementById('companyName');
-  name.style.opacity = 1;
-}, 7000);
+document.addEventListener("DOMContentLoaded", function () {
+    const subtext = document.getElementById("subtext");
+    const intro = document.querySelector(".intro");
+    const mainContent = document.querySelector(".main-content");
+
+    // Aguarda digitação
+    setTimeout(() => {
+        subtext.classList.add("visible");
+    }, 2500);
+
+    // Transição para conteúdo principal
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+            intro.classList.add("hidden");
+            mainContent.classList.remove("hidden");
+        }, 1000);
+    }, 4500);
+});
