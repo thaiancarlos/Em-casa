@@ -9,7 +9,7 @@
 /* Tela de intro */
 .intro {
     background-color: #000;
-    color: #00ffcc;
+    color: #ff0000;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,22 +20,18 @@
     transition: opacity 1s ease;
 }
 
-.intro h1 {
+#company-name {
     font-size: 3em;
+    color: #ff0000;
+    font-weight: bold;
+    animation: typing 2s steps(7) forwards;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #00ffcc;
-    width: 0;
-    animation: typing 2s steps(8) forwards, blink 0.7s step-end infinite;
 }
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 8ch }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
+    to { width: 7ch }
 }
 
 #subtext {
@@ -47,6 +43,40 @@
 
 #subtext.visible {
     opacity: 1;
+}
+
+/* Container para o "crewmate" */
+.crewmate-container {
+    margin-top: 50px;
+    animation: crewmateAnimation 3s ease-in-out infinite;
+}
+
+/* Animação do crewmate */
+.crewmate {
+    width: 80px;
+    height: 130px;
+    background-color: #ff0000;
+    border-radius: 20px 20px 10px 10px;
+    position: relative;
+    display: inline-block;
+    animation: move 1.5s ease-in-out infinite;
+}
+
+.crewmate::after {
+    content: "";
+    width: 30px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+@keyframes move {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
 /* Conteúdo principal */

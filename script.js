@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const intro = document.querySelector(".intro");
     const mainContent = document.querySelector(".main-content");
 
-    // Aguarda digitação
+    // Aguarda o efeito de digitação
     setTimeout(() => {
         subtext.classList.add("visible");
     }, 2500);
